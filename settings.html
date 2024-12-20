@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Settings</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="settings.html">Settings</a>
+        </nav>
+    </header>
+    <main>
+        <!-- User Details Form -->
+        <section class="user-details">
+            <h2>Add User Details</h2>
+            <form id="settingsForm">
+                <label for="user-name">Name:</label>
+                <input type="text" id="user-name" placeholder="Enter your name" required>
+                <label for="user-email">Email:</label>
+                <input type="email" id="user-email" placeholder="Enter your email" required>
+                <label for="user-budget">Monthly Budget:</label>
+                <input type="number" id="user-budget" placeholder="Enter your budget" required>
+                <button type="submit">Save Details</button>
+            </form>
+        </section>
+    </main>
+    <script>
+        // Save User Details
+        const form = document.getElementById("settingsForm");
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const userDetails = {
+                name: document.getElementById("user-name").value,
+                email: document.getElementById("user-email").value,
+                budget: document.getElementById("user-budget").value,
+            };
+            alert("User details saved successfully!");
+            console.log("User Details:", userDetails);
+            form.reset();
+        });
+    </script>
+</body>
+</html>
